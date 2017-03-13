@@ -5,19 +5,18 @@
  */
 
 
-(function (factory) {
-    if (typeof exports === "object" && exports &&
-        typeof module === "object" && module && module.exports === exports) {
-        // Browserify. Attach to jQuery module.
-        factory(require("jquery"));
-    } else if (typeof define === 'function' && define.amd) {
+(function (global, factory) {
+	if (typeof define === "function" && define.amd) {
 		// AMD. Register as an anonymous module.
-		define(['jquery'], factory);
+        define(['jquery'], factory);
+	} else if (typeof exports === "object") {
+		// Browserify. Attach to jQuery module.
+        module.exports = factory(require('jquery'));
 	} else {
 		// Browser globals
-		factory(jQuery);
+		global.timepicker = factory(global.jQuery);
 	}
-}(function ($) {
+})(this, function ($) {
 	var _ONE_DAY = 86400;
 	var _lang = {
 		am: 'am',
@@ -1266,4 +1265,4 @@
 		else if(typeof method === "object" || !method) { return methods.init.apply(this, arguments); }
 		else { $.error("Method "+ method + " does not exist on jQuery.timepicker"); }
 	};
-}));
+});

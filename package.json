@@ -17,7 +17,7 @@
 		"grunt-contrib-jshint": "^0.11.3",
 		"grunt-contrib-cssmin": "~0.4.1"
 	},
-	"main": "jquery.timepicker.min.js",
+	"main": "jquery.timepicker.js",
 	"description": "A jQuery timepicker plugin inspired by Google Calendar. It supports both mouse and keyboard navigation.",
 	"keywords": [ "timepicker", "time", "picker", "ui", "google calendar" ],
 	"homepage": "http://jonthornton.github.com/jquery-timepicker/",
